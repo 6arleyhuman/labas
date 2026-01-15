@@ -1,0 +1,45 @@
+name: SonarCloud analysis
+
+on:
+  push:
+    branches: [ "main" ]   
+  pull_request:
+    branches: [ "main" ]   
+  workflow_dispatch:
+
+permissions:
+  pull-requests: read
+
+jobs:
+  sonar-check:
+    name: Sonar Check
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: SonarScanner Begin
+        run: |
+          dotnet tool install --global dotnet-sonarscanner
+          echo "$env:USERPROFILE\.dotnet\tools" >> $env:GITHUB_PATH
+          dotnet sonarscanner begin `
+            /d:sonar.projectKey="6arleyhuman_labas" `
+            /d:sonar.organization="6arleyhuman" `
+            /d:sonar.token="${{ secrets.SONAR_TOKEN }}" `
+            /d:sonar.qualitygate.wait=true
+        shell: pwsh
+
+      - name: Restore
+        run: dotnet restore
+
+      - name: Build
+        run: dotnet build -c Release --no-restore
+
+      - name: SonarScanner End
+        run: dotnet sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
+        shell: pwsh
