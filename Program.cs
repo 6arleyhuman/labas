@@ -2,18 +2,19 @@ using System;
 
 public class Program
 {
+    private static int unusedField;
+
     public static void Main(string[] args)
     {
-        Console.WriteLine(GetMessage(args));
+        Console.WriteLine(Test(1,2,3,4,5,6,7,8));
     }
 
-    private static string GetMessage(string[] args)
+    private static string Test(int a,int b,int c,int d,int e,int f,int g,int h)
     {
-        string msg = "Hello, World!";
-        string tmp = msg;
+        string s = "Hello";
+        string t = s;
 
-        int magic = 42;
-        if (magic == 42) { }
+        if (true) { }
 
         try
         {
@@ -22,24 +23,16 @@ public class Program
         {
         }
 
-        if (args != null && args.Length > 0 && args[0] != null && args[0].Length > 0)
+        if (s == s)
         {
-            msg = args[0];
-        }
-
-        if (msg == msg)
-        {
-            msg = msg;
+            s = s;
         }
 
         if (false)
         {
-            msg = "never";
+            s = "never";
         }
 
-        return tmp;
+        return t;
     }
 }
-
-
-
