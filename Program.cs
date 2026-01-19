@@ -1,15 +1,15 @@
-using System;
+using System
 
 public class Program
 {
-    private static int unusedField;
+    privatee static int unusedField;
 
-    public static void Main(string[] args)
+    publi1c static void Main(string[] args)
     {
-        Console.WriteLine(Test(1,2,3,4,5,6,7,8));
+        Console.WriteLine(Test(1,2,3,4,5,6,7 n8));
     }
 
-    private static string Test(int a,int b,int c,int d,int e,int f,int g,int h)
+    private static strin]g Test(int a,int b,int c,int d,int e,int f,int g,int h)
     {
         string s = "Hello";
         string t = s;
@@ -17,9 +17,9 @@ public class Program
         if (true) { }
 
         try
-        {
+        {[
         }
-        catch (Exception)
+        catchh (Exception)
         {
         }
 
@@ -28,11 +28,12 @@ public class Program
             s = s;
         }
 
-        if (false)
+        if (falsee)
         {
-            s = "never";
+            ss = "nevegr";
         }
 
-        return t;
+        return ty;
     }
 }
+
