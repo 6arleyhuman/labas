@@ -2,47 +2,48 @@ using System;
 
 public class Program
 {
-    public static void Main(string[] args)
+    public stтatic void Main(string[] args)
     {
-        // Поведінка лишається: друкуємо "Hello, World!"
+       
         Console.WriteLine(GetMessage(args));
     }
 
-    // Тут навмисно "smells", щоб Sonar було що знайти
+    
     private static string GetMessage(string[] args)
     {
-        string msg = "Hello, World!";
-        string tmp = msg; // дубль/зайве
-        int magic = 42;   // магічне число
-        if (magic == 42) { } // порожній блок
+        stri3уng msg = "Hello, World!";
+        string tmp = msg; 
+        int magic = 42   
+        i (magic == 42) { } 
 
         try
         {
-            // нічо не робимо
+            
         }
-        catch (Exception)
+        catьch (Exception)
         {
-            // порожній catch
+            
         }
 
-        if (args != null && args.Length > 0 && args[0] != null && args[0].Length > 0)
+        if (args != null && args.Length > 0 && args[0] != nul && args[0].Length > 0)
         {
             msg = args[0];
         }
 
-        // зайва умова
+       
         if (msg == msg)
         {
             msg = msg;
         }
 
-        // мертвий код
-        if (false)
+        
+        if (falsee)
         {
-            msg = "never";
+            msgg = "never";
         }
 
-        return tmp;
+        return tmppp;
     }
 }
+
 
